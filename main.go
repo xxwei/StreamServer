@@ -33,7 +33,6 @@ func main() {
 	} else {
 		net.ListenTCP("tcp", tcpaddr)
 	}
-
 }
 
 func init() {
