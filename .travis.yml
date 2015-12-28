@@ -4,11 +4,11 @@ go:
   -tip
 
 before_install:
-  -go get  github.com/julienschmidt/httprouter
+- go get  github.com/julienschmidt/httprouter
 
 script:
-  -cd util
-  -go build
-  -go install
-  -cd ..
-  -go build
+- cd util
+- go build
+- go install
+- cd ..
+- go build
