@@ -1,7 +1,6 @@
 package main
 
 import (
-	"StreamServer/util"
 	//"errors"
 	"fmt"
 	"net"
@@ -23,13 +22,13 @@ func StartStreamServer() {
 		panic(err)
 	} else {
 		listener, err := net.ListenTCP("tcp", tcpaddr)
-		util.CheckErrorExit(err)
+		CheckErrorExit(err)
 		for {
 			conn, err := listener.Accept()
 			if err != nil {
 				continue
 			}
-			uuid := util.Rand()
+			uuid := Rand()
 			ret, err := createStreamChannel(conn, uuid.Hex())
 			if ret {
 				go handleClient(conn, uuid.Hex())

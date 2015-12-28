@@ -1,7 +1,6 @@
 package main
 
 import (
-	"StreamServer/util"
 	"flag"
 	"fmt"
 	"runtime"
@@ -10,7 +9,7 @@ import (
 
 func main() {
 
-	util.Welcome()
+	Welcome()
 	InitMongo()
 	InitHttpServer()
 

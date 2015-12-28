@@ -5,11 +5,6 @@ go:
 
 before_install:
 - go get  github.com/julienschmidt/httprouter
-- cd util
-- go build
-- go install
-- cd ..
-
 
 script:
 - go build
