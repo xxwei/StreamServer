@@ -1,6 +1,7 @@
 package main
 
 import (
+	"StreamServer/util"
 	"flag"
 	"fmt"
 	"runtime"
@@ -9,7 +10,7 @@ import (
 
 func main() {
 
-	Welcome()
+	util.Welcome()
 	InitMongo()
 	InitHttpServer()
 
@@ -25,7 +26,7 @@ func main() {
 	flag.Parse()
 	runtime.GOMAXPROCS(*nbCpus)
 	InitStreamServer(*port)
-	StartStreamServer()
+	go StartStreamServer()
 	for {
 		time.Sleep(time.Second)
 	}

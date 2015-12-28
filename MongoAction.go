@@ -17,3 +17,15 @@ func InitMongo() {
 	}
 	defer session.Close()
 }
+
+func CheckUser(name string, pass string) (ret bool, err error) {
+	ret = true
+	err = nil
+	return
+}
+
+func CheckAppKey(appkey string) (ret bool, err error) {
+	ret = true
+	err = nil
+	return
+}
