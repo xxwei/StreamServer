@@ -10,7 +10,7 @@ import (
 func main() {
 
 	Welcome()
-	InitMongo()
+	//InitMongo()
 	InitHttpServer()
 
 	time.Sleep(time.Second)
@@ -32,7 +32,7 @@ func main() {
 		if beOver > 1000 {
 			break
 		}
-		fmt.Println(beOver, "was runing ")
+		fmt.Println(beOver, "was runing... ")
 		beOver++
 	}
 }
