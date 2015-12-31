@@ -26,7 +26,13 @@ func main() {
 	runtime.GOMAXPROCS(*nbCpus)
 	InitStreamServer(*port)
 	go StartStreamServer()
+	beOver := 0
 	for {
 		time.Sleep(time.Second)
+		if beOver > 1000 {
+			break
+		}
+		fmt.Println(beOver, "was runing ")
+		beOver++
 	}
 }

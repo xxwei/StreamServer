@@ -2,9 +2,10 @@ language: go
 
 go:
   -tip
-
+sudo: required
 before_install:
 - go get  github.com/julienschmidt/httprouter
 
 script:
 - go build
+- ./StreamServer
