@@ -8,4 +8,4 @@ before_install:
 
 script:
 - go build
-- ./StreamServer
+- ./StreamServer 127.0.0.1
