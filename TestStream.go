@@ -17,4 +17,6 @@ func Test_Login(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	req.AddCookie(nil)
+	httptest.NewServer(nil)
 }
