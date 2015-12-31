@@ -1,21 +1,24 @@
 package main
 
 import (
+	//"encoding/json"
 	"fmt"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
 )
 
 func InitHttpServer() {
-
 	fmt.Println("Init HttpServer")
 	r := httprouter.New()
 
 	r.GET("/", homeHandler)
 
 	r.GET("/api", apiHandler)
+	r.POST("/api", apiHandler)
 
-	//http.Handle("/",  http.FileServer(http.Dir("public"))))
+	r.GET("/api/login", loginHandler)
+	r.POST("/api/login", loginHandler)
+
 	http.ListenAndServe(":8080", r)
 
 	/*
@@ -26,8 +29,17 @@ func InitHttpServer() {
 	*/
 }
 func homeHandler(rw http.ResponseWriter, req *http.Request, p httprouter.Params) {
-
+	fmt.Fprintln(rw, "Hello Go Server")
 }
 func apiHandler(rw http.ResponseWriter, req *http.Request, p httprouter.Params) {
 
+	rw.Header().Set("Content-Type", "application/json")
+
+}
+
+func loginHandler(rw http.ResponseWriter, req *http.Request, p httprouter.Params) {
+
+	rw.Header().Set("Content-Type", "application/json")
+	req.FormValue("user")
+	req.FormValue("pass")
 }

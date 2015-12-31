@@ -29,7 +29,7 @@ func StartStreamServer() {
 				continue
 			}
 			uuid := Rand()
-			ret, err := createStreamChannel(conn, uuid.Hex())
+			ret, err := createTCPStreamChannel(conn, uuid.Hex())
 			if ret {
 				go handleClient(conn, uuid.Hex())
 			}
@@ -37,8 +37,9 @@ func StartStreamServer() {
 	}
 }
 
-func createStreamChannel(c net.Conn, uuid string) (ret bool, err error) {
-	ret = true
+func createTCPStreamChannel(c net.Conn, uuid string) (ret bool, err error) {
+	fmt.Println("Remote ip addr ", c.RemoteAddr())
+	ret = false
 	return
 }
 
@@ -46,12 +47,26 @@ func handleClient(c net.Conn, uuid string) {
 
 }
 
-func closeStreamChannel(c net.Conn, uuid string) (ret bool, err error) {
+func closeTCPStreamChannel(c net.Conn, uuid string) (ret bool, err error) {
 	ret = true
 	return
 }
 
-func AddStreamAddr(uuid string, addr string) (ret bool, err error) {
+func AddStreamDestAddr(uuid string, addr string) (ret bool, err error) {
 	ret = true
+	return
+}
+
+func DelStreamDestAddr(uuid string, add string) (ret bool, err error) {
+	ret = true
+	return
+}
+
+func FindStream(uuid string) (ret bool, err error) {
+	ret = true
+	return
+}
+func ListStreamFormatJson() (ret string, err error) {
+	ret = ""
 	return
 }

@@ -12,7 +12,7 @@ import (
 )
 
 func init() {
-	fmt.Println("uuid.init")
+	//fmt.Println("uuid.init")
 }
 
 // seeded indicates if math/rand has been seeded
