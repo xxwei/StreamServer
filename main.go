@@ -29,7 +29,7 @@ func main() {
 	beOver := 0
 	for {
 		time.Sleep(time.Second)
-		if beOver > 1000 {
+		if beOver > 3000 {
 			break
 		}
 		fmt.Println(beOver, "was runing... ")

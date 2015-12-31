@@ -19,7 +19,7 @@ func InitHttpServer() {
 	r.GET("/api/login", loginHandler)
 	r.POST("/api/login", loginHandler)
 
-	http.ListenAndServe(":8080", r)
+	go http.ListenAndServe(":8080", r)
 
 	/*
 		resp, err := http.Get("http://www.baidu.com")
