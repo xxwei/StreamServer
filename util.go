@@ -3,14 +3,36 @@ package main
 import (
 	"fmt"
 	"os"
+	"runtime"
 	//"gopkg.in/mgo.v2"
 	//"gopkg.in/mgo.v2/bson"
-	//log"
+	"log"
 	"net"
 )
 
 func init() {
 	//fmt.Println("util.init")
+	where := func() {
+		_, file, line, _ := runtime.Caller(1)
+		log.Printf("%s:%d", file, line)
+	}
+	where()
+
+	log.SetFlags(log.Llongfile)
+	log.Print("")
+	/*
+		var testslice [100]int
+
+		var slice []int = testslice[3:20]
+
+		slice1 := make([]int, 10, 50)
+
+		slice1 = slice1[0 : len(slice1)+5] //切片扩容
+
+		slice2 := copy(slice, slice1)
+
+		//slice2 = append(slice, 4, 5, 6) //追加新元素
+	*/
 }
 
 func Welcome() (ret bool) {

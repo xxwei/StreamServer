@@ -32,7 +32,9 @@ func main() {
 		if beOver > 3000 {
 			break
 		}
-		fmt.Println(beOver, "was runing... ")
+		if beOver%300 == 0 {
+			fmt.Println(beOver, "was runing... ")
+		}
 		beOver++
 	}
 }
